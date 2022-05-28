@@ -1,7 +1,7 @@
 ﻿using Personal.Core.DomainObjects;
 using Personal.Domain.ValueObjects;
 
-namespace Personal.Domain.Entities
+namespace Personal.Domain.Entities.Cadastros
 {
     public class Pessoa : EntityTenant
     {

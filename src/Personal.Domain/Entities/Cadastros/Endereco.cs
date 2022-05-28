@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Personal.Domain.Entities
+namespace Personal.Domain.Entities.Cadastros
 {
     public class Endereco : Entity
     {
