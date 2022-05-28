@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CA1708: Identificadores devem ter alguma diferença além da distribuição de maiúsculas e minúsculas
+dotnet_diagnostic.CA1708.severity = none
