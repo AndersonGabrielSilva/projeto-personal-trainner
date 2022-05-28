@@ -50,5 +50,10 @@ namespace Personal.Domain.Entities
         public Guid PessoaId { get; private set; }
         // EF
         public Pessoa Pessoa { get; private set; }
+
+        public override bool EhValido()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -8,8 +8,8 @@ namespace Personal.Domain.Interface
 {
     public interface INotificador
     {
-        bool TemNotificacao();
-        List<Notificacao> ObterNotificacoes();
-        void Handle(Notificacao notificacao);
+        //bool TemNotificacao();
+        //List<Notificacao> ObterNotificacoes();
+        //void Handle(Notificacao notificacao);
     }
 }
