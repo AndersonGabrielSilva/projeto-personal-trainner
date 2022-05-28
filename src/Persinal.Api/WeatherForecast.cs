@@ -1,4 +1,4 @@
-namespace Persinal.Api
+namespace Personal.Api
 {
     public class WeatherForecast
     {
