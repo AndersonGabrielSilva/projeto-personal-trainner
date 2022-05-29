@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Personal.Domain.Entities.Cadastros
 {
-    public class Personal : EntityTenant
+    public class PersonalTrainner : EntityTenant
     {
 
 

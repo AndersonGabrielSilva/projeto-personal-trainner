@@ -16,7 +16,7 @@ namespace Personal.Core.Interfaces
         /// <returns></returns>
         Task<List<TEntity>> ObterPorPaginaAsync(int skip = 0, int take = 25);
         Task AtualizarAsync(TEntity entity);
-        Task RemoverAsync(Guid id);
+        Task RemoverAsync(Guid id, Guid usuarioID);
         Task<IEnumerable<TEntity>> BuscarAsync(Expression<Func<TEntity, bool>> predicate);
         Task<int> SaveChangesAsync();
     }

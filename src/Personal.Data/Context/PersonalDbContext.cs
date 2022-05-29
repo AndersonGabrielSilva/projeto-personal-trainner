@@ -23,12 +23,13 @@ namespace Personal.Data.Context
             {
                 if (entry.State == EntityState.Added)
                 {
-                    entry.Property("DataCadastro").CurrentValue = DateTime.Now;
+                    entry.Property("DataCadastro").CurrentValue = DateTime.UtcNow;
+                    entry.Property("DataAtualizacao").CurrentValue = DateTime.UtcNow;
                 }
 
                 if (entry.State == EntityState.Modified)
                 {
-                    entry.Property("DataCadastro").IsModified = false;
+                    entry.Property("DataCadastro").IsModified = false;                    
                 }
             }
 
@@ -41,12 +42,13 @@ namespace Personal.Data.Context
             {
                 if (entry.State == EntityState.Added)
                 {
-                    entry.Property("DataCadastro").CurrentValue = DateTime.Now;
+                    entry.Property("DataCadastro").CurrentValue = DateTime.UtcNow;
+                    entry.Property("DataAtualizacao").CurrentValue = DateTime.UtcNow;
                 }
 
                 if (entry.State == EntityState.Modified)
                 {
-                    entry.Property("DataCadastro").IsModified = false;
+                    entry.Property("DataCadastro").IsModified = false;                   
                 }
             }
 

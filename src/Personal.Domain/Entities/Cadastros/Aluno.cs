@@ -15,7 +15,8 @@ namespace Personal.Domain.Entities.Cadastros
         public Usuario Usuario { get; set; }
 
 
-        public ICollection<Personal> Personais { get; set; }
+        public ICollection<PersonalTrainner> PersonaisTrainers { get; set; }
+
 
         public override bool EhValido()
         {

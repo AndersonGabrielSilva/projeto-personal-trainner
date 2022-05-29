@@ -15,7 +15,34 @@ namespace Personal.Core.DomainObjects
 
         public DateTime DataCadastro { get; set; }
 
+        public DateTime DataAtualizacao { get; set; }
+        public Guid UsuarioAlteracao { get; private set; }
 
+        public bool Inativo { get; private set; }
+
+        #region Comportamentos
+        public void Desativar(Guid usuarioLocado)
+        {
+            this.Inativo = true;
+            this.RegistraAlteracao(usuarioLocado);
+        }
+
+        public void Ativar(Guid usuarioLocado)
+        {
+            this.Inativo = true;
+            this.RegistraAlteracao(usuarioLocado);
+        }
+
+        public void RegistraAlteracao(Guid usuarioLocado)
+        {
+            this.UsuarioAlteracao = usuarioLocado;
+            this.DataAtualizacao = DateTime.UtcNow;
+        }
+        public abstract bool EhValido();
+
+        #endregion
+
+        #region Alterando Comportamento Padrão
         /// <summary>
         /// Para uma Entidade ser igual a outra não basta ela ser do mesmo tipo.
         /// <para>E uma boa pratica alterar o metodo Equals para validar tambem o ID da Entidade</para>
@@ -55,7 +82,7 @@ namespace Personal.Core.DomainObjects
         {
             return !(a == b);
         }
-
+                
         /*
          * O método GetHashCode() é um método de Object que é herdado por todos os objetos na linguagem C#.
            Este método basicamente serve como função de hash padrão.
@@ -82,7 +109,6 @@ namespace Personal.Core.DomainObjects
         {
             return $"{GetType().Name} [Id={Id}]";
         }
-
-        public abstract bool EhValido();
+        #endregion
     }
 }

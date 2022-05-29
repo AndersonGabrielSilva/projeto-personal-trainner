@@ -1,5 +1,6 @@
 ﻿using Personal.Core.DomainObjects;
 using Personal.Core.Interfaces;
+using Personal.Domain.Entities.Cadastros;
 using Personal.Domain.Enum;
 using Personal.Domain.ValueObjects;
 using System;
