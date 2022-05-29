@@ -7,6 +7,7 @@ using Personal.Domain.Entities.Cadastros;
 using System.Linq.Expressions;
 using Personal.Data.Context;
 using Personal.Domain.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace Personal.Data.Repository
 {
@@ -17,9 +18,13 @@ namespace Personal.Data.Repository
         {
         }
 
-        public Task<IEnumerable<Aluno>> ObterAlunos(int skip = 0, int size = 25)
+        public async Task<IEnumerable<Aluno>> ObterAlunos(int skip = 0, int size = 25)
         {
-            throw new NotImplementedException();
+            return await contexto.Alunos
+                                 .Where(x => x.TenantId == _userLogado.GetTenentId())
+                                 .Skip(skip)
+                                 .Take(size)
+                                 .ToListAsync();
         }
     }
 }

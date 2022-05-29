@@ -16,7 +16,7 @@ namespace Personal.Data.Repository
     {
 
         protected readonly PersonalDbContext contexto;
-        private readonly IUser _userLogado;
+        protected readonly IUser _userLogado;
         protected readonly DbSet<TEntity> DbSet;
 
         public Repository(PersonalDbContext personalDb,

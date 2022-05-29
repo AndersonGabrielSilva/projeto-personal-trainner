@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Personal.Domain.Entities;
+using Personal.Domain.Entities.Cadastros;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +16,12 @@ namespace Personal.Data.Context
 
         }
 
-        //Data
+        public DbSet<Usuario> Usuarios { get;set; }
+        public DbSet<Pessoa> Pessoas { get;set; }
+        public DbSet<Endereco> Enderecos { get;set; }
+        public DbSet<PersonalTrainner> PersonalTrainners { get;set; }
+        public DbSet<Aluno> Alunos { get;set; }
+
 
         #region Override - SaveChanges
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

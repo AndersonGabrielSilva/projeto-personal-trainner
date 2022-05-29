@@ -15,5 +15,7 @@ namespace Personal.Domain.Interface
         bool IsAuthenticated();
         bool IsInRole(string role);
         IEnumerable<Claim> GetClaimsIdentity();
+
+        Guid GetTenentId();
     }
 }
