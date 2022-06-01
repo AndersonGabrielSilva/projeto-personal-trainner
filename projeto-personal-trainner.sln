@@ -19,9 +19,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{9607D2EC-0F7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{8D098ED6-C411-4A17-AED2-8651E77D004C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personal.Admin", "src\Personal.Admin\Personal.Admin.csproj", "{07E3BF78-4D0C-4E67-8834-BF0257EE95C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Personal.Admin", "src\Personal.Admin\Personal.Admin.csproj", "{07E3BF78-4D0C-4E67-8834-BF0257EE95C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personal.Client", "Personal.Client\Personal.Client.csproj", "{71CCD2B2-A3BF-4774-BDF9-C6C32B96EBE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Personal.Client", "Personal.Client\Personal.Client.csproj", "{71CCD2B2-A3BF-4774-BDF9-C6C32B96EBE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

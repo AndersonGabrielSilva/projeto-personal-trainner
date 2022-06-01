@@ -1,0 +1,40 @@
+﻿@inherits MenuAdministradorBase
+
+<MudPaper Width="100%" Height="100%" Class="d-inline-flex pb-3" Elevation="0" Style="background-color: transparent;">
+    <MudNavMenu Class="mud-width-full" Bordered="true">
+        <MudGrid Spacing="0" Style="background-color: #222326" Class="pt-3">
+            <MudItem xs="12" sm="12" md="12" lg="12" xl="12" xxl="12" Class="d-flex justify-center">
+                <MudAvatar Color="Color.Dark"
+                           Variant="Variant.Outlined"
+                           Style="height: 100px; width: 100px;"
+                           Image="https://avatars.githubusercontent.com/u/34658571?v=4">
+
+                </MudAvatar>
+            </MudItem>
+            <MudItem xs="12" sm="12" md="12" lg="12" xl="12" xxl="12" Class="d-flex justify-center pa-0 pt-3">
+                <MudText Typo="Typo.button" Class="px-4 mud-text-secondary" Style="color: #F2F2F2;">Daniel Polo</MudText>
+            </MudItem>
+            <MudItem xs="12" sm="12" md="12" lg="12" xl="12" xxl="12" Class="d-flex justify-center pa-0 pb-3">
+                <MudText Typo="Typo.caption" Class="px-4 mud-text-secondary" Style="color: #F2F2F2;">Administrador</MudText>
+            </MudItem>
+        </MudGrid>
+        <MudDivider Class="mt-1 mb-0" />
+        <MudNavLink Href="/" Icon="@Icons.Rounded.Dashboard">Início</MudNavLink>
+
+        <MudNavGroup Title="Administrador" Icon="@Icons.Rounded.AdminPanelSettings">
+            <MudNavLink Icon="@Icons.Rounded.ArrowRight" Href="/safra">Usuário</MudNavLink>
+            <MudNavLink Icon="@Icons.Rounded.ArrowRight" Href="/fazenda">Personal Trainer</MudNavLink>
+            <MudNavLink Icon="@Icons.Rounded.ArrowRight" Href="/security">Parâmetros do sistema</MudNavLink>
+        </MudNavGroup>
+
+        <MudNavGroup Title="Cadastro" Icon="@Icons.Rounded.Edit">
+            <MudNavLink Icon="@Icons.Rounded.ArrowRight" Href="/safra">Grupo de Atividade</MudNavLink>
+            <MudNavLink Icon="@Icons.Rounded.ArrowRight" Href="/fazenda">Atividade Físicas</MudNavLink>
+        </MudNavGroup>
+
+        <MudNavGroup Title="Relatório" Icon="@Icons.Rounded.EventNote">
+            <MudNavLink Icon="@Icons.Rounded.ArrowRight" Href="/users">Usuário</MudNavLink>
+            <MudNavLink Icon="@Icons.Rounded.ArrowRight" Href="/fazenda">Personal Trainer</MudNavLink>
+        </MudNavGroup>
+    </MudNavMenu>
+</MudPaper>

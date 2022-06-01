@@ -1,17 +1,62 @@
 ﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+<MudThemeProvider Theme="TemaAtual" />
+<MudDialogProvider />
+<MudSnackbarProvider />
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
+<MudLayout>
+    <MudAppBar Elevation=1 Dense=true>
+        <MudIconButton Icon=@Icons.Material.Filled.Menu Color=Color.Inherit Edge=Edge.Start OnClick="@((e) => DrawerToggle())" />
+        <MudText Typo="Typo.body1" Class="ml-3">Painel Administrativo - Personal Trainer</MudText>
+        <MudSpacer />
 
-        <article class="content px-4">
+        @*
+            <MudMenu Icon="@Icons.Material.Rounded.Email" Color="Color.Inherit" Dense="true" Direction="Direction.Bottom">
+            <MudMenuItem>Meu Perfil</MudMenuItem>
+            <MudMenuItem>Sair</MudMenuItem>
+            </MudMenu>
+        *@
+
+        <MudMenu Icon="@Icons.Material.Rounded.MoreVert" Color="Color.Inherit" Dense="true" Direction="Direction.Bottom">
+            <MudMenuItem>Meu Perfil</MudMenuItem>
+            <MudMenuItem>Sair</MudMenuItem>
+        </MudMenu>
+
+    </MudAppBar>
+    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="3" Style="background-color: #F9F9F9;">
+        <MenuAdministrador />
+    </MudDrawer>
+    <MudMainContent>
+        <MudContainer Class="pt-4">
             @Body
-        </article>
-    </main>
-</div>
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    bool _drawerOpen = true;
+
+    void DrawerToggle() =>
+        _drawerOpen = !_drawerOpen;
+
+    protected override void OnInitialized() =>
+        TemaAtual = defaultTheme;
+
+    #region Theme
+
+    MudTheme TemaAtual = new MudTheme();
+
+    MudTheme defaultTheme = new MudTheme()
+        {
+            Palette = new Palette()
+            {
+                AppbarBackground = "#222326",
+                AppbarText = "#F2F2F2",
+
+                Primary = "#83A603"
+            }
+        };
+    #endregion
+
+}
