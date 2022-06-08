@@ -6,32 +6,46 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation=1 Dense=true>
-        <MudIconButton Icon=@Icons.Material.Filled.Menu Color=Color.Inherit Edge=Edge.Start OnClick="@((e) => DrawerToggle())" />
-        <MudText Typo="Typo.body1" Class="ml-3">Painel Administrativo - Personal Trainer</MudText>
-        <MudSpacer />
+    <AuthorizeView>
+        <Authorized>
+            <MudAppBar Elevation=1 Dense=true>
+                <MudIconButton Icon=@Icons.Material.Filled.Menu Color=Color.Inherit Edge=Edge.Start OnClick="@((e) => DrawerToggle())" />
+                <MudText Typo="Typo.body1" Class="ml-3">Painel Administrativo - Personal Trainer</MudText>
+                <LoginDisplayComponent />
+                <MudSpacer />
+                <MudMenu Icon="@Icons.Material.Rounded.Email" Color="Color.Inherit" Dense="true" Direction="Direction.Bottom">
+                    <MudMenuItem>Meu Perfil</MudMenuItem>
+                    <MudMenuItem>Sair</MudMenuItem>
+                </MudMenu>
+                <MudMenu Icon="@Icons.Material.Rounded.MoreVert" Color="Color.Inherit" Dense="true" Direction="Direction.Bottom">
+                    <MudMenuItem>Meu Perfil</MudMenuItem>
+                    <MudMenuItem>Sair</MudMenuItem>
+                </MudMenu>
+            </MudAppBar>
+            <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="3" Style="background-color: #F9F9F9;">
+                <MenuAdministrador />
+            </MudDrawer>
+            <MudMainContent>
+                <MudContainer Class="pt-4 bg-light">
+                    @Body
+                </MudContainer>
+            </MudMainContent>
+        </Authorized>
 
-        @*
-            <MudMenu Icon="@Icons.Material.Rounded.Email" Color="Color.Inherit" Dense="true" Direction="Direction.Bottom">
-            <MudMenuItem>Meu Perfil</MudMenuItem>
-            <MudMenuItem>Sair</MudMenuItem>
-            </MudMenu>
-        *@
+        <NotAuthorized>
+            <MudAppBar Elevation=1 Dense=true>
+                <MudText Typo="Typo.body1" Class="ml-3">Painel Administrativo - Personal Trainer</MudText>
+                <MudSpacer />
+                <LoginDisplayComponent />
+            </MudAppBar>
+            <MudMainContent>
+                <MudContainer Class="pt-4 bg-light">
+                    @Body
+                </MudContainer>
+            </MudMainContent>
+        </NotAuthorized>
 
-        <MudMenu Icon="@Icons.Material.Rounded.MoreVert" Color="Color.Inherit" Dense="true" Direction="Direction.Bottom">
-            <MudMenuItem>Meu Perfil</MudMenuItem>
-            <MudMenuItem>Sair</MudMenuItem>
-        </MudMenu>
-
-    </MudAppBar>
-    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="3" Style="background-color: #F9F9F9;">
-        <MenuAdministrador />
-    </MudDrawer>
-    <MudMainContent>
-        <MudContainer Class="pt-4">
-            @Body
-        </MudContainer>
-    </MudMainContent>
+    </AuthorizeView>
 </MudLayout>
 
 @code {

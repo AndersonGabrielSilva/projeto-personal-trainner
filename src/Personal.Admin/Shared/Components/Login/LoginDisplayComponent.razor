@@ -1,0 +1,10 @@
+﻿<AuthorizeView>
+    <Authorized>
+        Hello, @context.User.Identity.Name!
+        <MudButton Color="Color.Tertiary" Href="LogOut" Variant="Variant.Outlined" Size="Size.Small" Class="mx-1">Sair</MudButton>
+    </Authorized>
+    <NotAuthorized>
+        <MudButton Color="Color.Tertiary" Href="Register" Variant="Variant.Outlined" Size="Size.Small" Class="mx-1">Registrar</MudButton>
+        <MudButton Color="Color.Tertiary" Href="Login" Variant="Variant.Outlined" Size="Size.Small" Class="mx-1">Entrar</MudButton>
+    </NotAuthorized>
+</AuthorizeView>
